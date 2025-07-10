@@ -14,7 +14,7 @@ const userRoutes = require('./routes/users');
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT
 
 // Connect to database
 connectDB();
@@ -39,9 +39,12 @@ app.get('/health', (req, res) => {
 // Error handling middleware
 app.use(errorHandler);
 
+const renderURL = process.env.RENDER_EXTERNAL_URL || `http://localhost:${PORT}`;
+console.log(`Inngest endpoint: ${renderURL}/api/inngest`);
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  console.log(`Inngest endpoint: http://localhost:${PORT}/api/inngest`);
 });
+
 
 module.exports = app;
