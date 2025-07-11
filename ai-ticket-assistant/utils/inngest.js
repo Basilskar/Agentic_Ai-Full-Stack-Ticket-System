@@ -6,7 +6,8 @@ const { sendEmailNotification } = require('../services/emailService');
 
 const inngest = new Inngest({ 
   id: 'ticket-management-app',
-  name: 'Ticket Management System'
+  name: 'Ticket Management System',
+  eventKey: process.env.INNGEST_EVENT_KEY // ✅ Critical for event delivery
 });
 
 const processTicket = inngest.createFunction(
