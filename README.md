@@ -1,84 +1,79 @@
-AI-Powered Ticket Management System 
-A streamlined ticket management system built with React, Node.js, MongoDB, and Google Material-UI. Uses Google Gemini AI for intelligent ticket categorization, routing, and assignment.
+# 🎫 AI-Powered Ticket Management System
 
-✨ Key Features
-AI-Powered Intelligence
+A modern, AI-driven ticketing solution built with **React**, **Node.js**, **MongoDB Atlas**, and **Google Gemini AI**. It intelligently categorizes, prioritizes, and routes tickets using advanced NLP, delivering a seamless experience for support teams and end users.
 
-Automatic ticket categorization
+---
 
-Smart priority assignment
+## ✨ Key Features
 
-Skill-based routing
+### 🤖 AI-Powered Intelligence
+- **Automatic Ticket Categorization** – Smart tagging using Gemini AI.
+- **Priority Prediction** – AI predicts urgency level.
+- **Skill-Based Moderator Assignment** – Assigns tickets to the most relevant team member.
+- **Sentiment Analysis** – Understand user tone and urgency for better handling.
 
-Sentiment analysis for urgency and tone
+### 💻 User Interface
+- **Built with Google Material-UI** – Clean, accessible, and responsive design.
+- **Progressive Web App (PWA)** – Offline access and app-like experience.
 
-Modern Google Material-UI Design
+### 🔐 Authentication & Authorization
+- **JWT Authentication** – Secure login.
+- **Role-Based Access** – Supports Admin, Moderator, and User roles.
 
-Clean, responsive, accessible interface
+### 🛠️ Ticket Management
+- **Full CRUD** – Create, view, edit, and delete tickets.
+- **Status Lifecycle** – Track tickets across Open, In Progress, Resolved, and Closed.
+- **Comments & File Attachments** – Collaborate easily within tickets.
 
-Secure Authentication
+### 🔔 Notifications
+- **Email Alerts** – For new assignments and status changes (via Mailtrap).
+- **Optional Slack Integration** – (Planned) for team communication.
 
-JWT-based login
+### 🔍 Productivity Tools
+- **Search & Filters** – Find tickets fast.
+- **Bulk Actions** – Manage multiple tickets efficiently.
 
-Role-based access (Admin, Moderator, User)
+---
 
-Ticket Management
+## 🏗️ Tech Stack
 
-Create, read, update, and delete tickets
+| Layer       | Tools & Technologies                  |
+|-------------|----------------------------------------|
+| Frontend    | React 18, Material-UI 5, Axios         |
+| Backend     | Node.js, Express.js, MongoDB Atlas     |
+| AI Layer    | Google Gemini AI (via custom AI service) |
+| Deployment  | Vercel (frontend), Render (backend)    |
 
-Status tracking (Open, In Progress, Resolved, Closed)
+---
 
-Comment system and file attachments
+## 🚀 Getting Started
 
-Notifications
+### 📦 Prerequisites
 
-Email and in-app notifications
+- **Node.js v16+**
+- **MongoDB Atlas account**
+- **Google Gemini API access**
+- **Vercel account** (for frontend)
+- **Render account** (for backend)
+- **Mailtrap account** (for email testing)
 
-Optional Slack integration
+---
 
-Advanced Features
+## ⚙️ Backend Setup
 
-Search and filtering
-
-Bulk operations
-
-PWA and offline capability
-
-🏗️ Stack Overview
-Layer	Technologies/Tools
-Frontend	React 18, Material-UI 5, Axios
-Backend	Node.js, Express.js, MongoDB
-AI	Google Gemini AI, NLP
-Deployment	Vercel (frontend), Node.js (API)
-🚀 Quick Start
-Prerequisites
-Node.js (v16 or higher)
-
-MongoDB (v4.4 or higher)
-
-npm or yarn
-
-Installation
-Clone the repository
-
-bash
-git clone https://github.com/yourusername/ai-ticket-management.git
-cd ai-ticket-management
-Install Backend Dependencies
-
-bash
+1. **Navigate to the backend directory:**
 cd backend
-npm install
-Install Frontend Dependencies
-
-bash
-cd ../frontend
-npm install
-Environment Setup
-
-Create .env file in the backend directory:
 
 text
+2. **Install dependencies:**
+npm install
+
+text
+
+### Backend Environment Variables
+
+Create a `.env` file in the `backend` directory with the following variables:
+
 MONGO_URI=mongodb+srv://your-username:your-password@cluster0.mongodb.net/ticket-management?retryWrites=true&w=majority
 JWT_SECRET=your-super-secret-jwt-key-here
 MAILTRAP_SMTP_HOST=sandbox.smtp.mailtrap.io
@@ -89,75 +84,80 @@ GEMINI_API_KEY=your-gemini-api-key
 APP_URL=http://localhost:3000
 PORT=5000
 NODE_ENV=development
-Database Setup
 
-bash
-# Start MongoDB (if running locally)
-mongod
-# Or use MongoDB Atlas (cloud) - update MONGO_URI in .env
-Start the Application
+text
 
-Backend:
+> **Replace placeholders with your actual credentials and settings.**
 
-bash
-cd backend
-npm run dev
-Frontend:
+---
 
-bash
+## ⚙️ Frontend Setup
+
+1. **Navigate to the frontend directory:**
 cd ../frontend
-npm start
-Inngest Local Dev Server (if using Inngest):
 
-bash
-npx inngest-cli@latest dev
-Access the Application
+text
+2. **Install dependencies:**
+npm install
 
-Frontend: http://localhost:3000
+text
 
-Backend API: http://localhost:5000
+### Frontend Environment Variables
 
-🔧 Configuration
-Google Gemini AI
+Create a `.env` file in the `frontend` directory with the following variables:
 
-Visit Google AI Studio
+REACT_APP_API_URL=http://localhost:5000
+REACT_APP_ENV=development
 
-Create a new API key
+text
 
-Add the key to .env as GEMINI_API_KEY
+> **For production, update `REACT_APP_API_URL` to your deployed backend API URL (e.g., your Render service URL).**
 
-Email (Development)
+---
 
-Use Mailtrap for SMTP testing
+## 🎯 Usage
 
-🎯 Usage
-End Users: Sign up, submit tickets, track progress, communicate
+- **End Users:** Sign up, submit tickets, track progress, and communicate with support.
+- **Support Team:** View assigned tickets, update status, add comments, resolve issues.
+- **Administrators:** Manage users, assign roles, view analytics, and configure settings.
 
-Support Team: View assigned tickets, update status, add comments, resolve issues
+---
 
-Administrators: Manage users, assign roles, view analytics, configure settings
+## 🧪 Testing
 
-🧪 Testing
-Backend Tests
-
-bash
+- **Backend Tests:**
 cd backend
 npm test
-Frontend Tests
 
-bash
+text
+- **Frontend Tests:**
 cd frontend
 npm test
-🚀 Deployment
-Frontend: Deploy to Vercel
 
-Backend: Deploy to your preferred Node.js hosting provider
+text
 
-🔒 Security
-Password Hashing: bcrypt
+---
 
-JWT Authentication: Secure token-based login
+## 🚀 Deployment
 
-Input Validation: Sanitize user inputs
+- **Frontend:** Deploy to [Vercel](https://vercel.com/)
+- **Backend:** Deploy to [Render](https://render.com/)
 
-CORS Protection: Configured for security
+---
+
+## 🔒 Security
+
+- **Password Hashing:** bcrypt
+- **JWT Authentication:** Secure token-based login
+- **Input Validation:** Sanitize user inputs
+- **CORS Protection:** Configured for security
+
+---
+
+## 📝 Tips for Production
+
+- **Update API URLs:** Ensure your frontend points to the correct backend URL in production.
+- **Environment Variables:** Set all required variables in Vercel and Render dashboards.
+- **Rotate Secrets:** Regularly update sensitive keys and credentials.
+
+---
