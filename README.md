@@ -7,42 +7,42 @@ A modern, AI-driven ticketing solution built with **React**, **Node.js**, **Mong
 ## ✨ Key Features
 
 ### 🤖 AI-Powered Intelligence
-- **Automatic Ticket Categorization** – Smart tagging using Gemini AI.
-- **Priority Prediction** – AI predicts urgency level.
-- **Skill-Based Moderator Assignment** – Assigns tickets to the most relevant team member.
-- **Sentiment Analysis** – Understand user tone and urgency for better handling.
+- **Automatic Ticket Categorization** – Smart tagging using Gemini AI
+- **Priority Prediction** – AI predicts urgency level
+- **Skill-Based Moderator Assignment** – Assigns tickets to the most relevant team member
+- **Sentiment Analysis** – Understand user tone and urgency for better handling
 
 ### 💻 User Interface
-- **Built with Google Material-UI** – Clean, accessible, and responsive design.
-- **Progressive Web App (PWA)** – Offline access and app-like experience.
+- **Built with Google Material-UI** – Clean, accessible, and responsive design
+- **Progressive Web App (PWA)** – Offline access and app-like experience
 
 ### 🔐 Authentication & Authorization
-- **JWT Authentication** – Secure login.
-- **Role-Based Access** – Supports Admin, Moderator, and User roles.
+- **JWT Authentication** – Secure login
+- **Role-Based Access** – Supports Admin, Moderator, and User roles
 
 ### 🛠️ Ticket Management
-- **Full CRUD** – Create, view, edit, and delete tickets.
-- **Status Lifecycle** – Track tickets across Open, In Progress, Resolved, and Closed.
-- **Comments & File Attachments** – Collaborate easily within tickets.
+- **Full CRUD** – Create, view, edit, and delete tickets
+- **Status Lifecycle** – Track tickets across Open, In Progress, Resolved, and Closed
+- **Comments & File Attachments** – Collaborate easily within tickets
 
 ### 🔔 Notifications
-- **Email Alerts** – For new assignments and status changes (via Mailtrap).
-- **Optional Slack Integration** – (Planned) for team communication.
+- **Email Alerts** – For new assignments and status changes (via Mailtrap)
+- **Optional Slack Integration** – (Planned) for team communication
 
 ### 🔍 Productivity Tools
-- **Search & Filters** – Find tickets fast.
-- **Bulk Actions** – Manage multiple tickets efficiently.
+- **Search & Filters** – Find tickets fast
+- **Bulk Actions** – Manage multiple tickets efficiently
 
 ---
 
 ## 🏗️ Tech Stack
 
-| Layer       | Tools & Technologies                  |
+| Layer       | Tools & Technologies                    |
 |-------------|----------------------------------------|
-| Frontend    | React 18, Material-UI 5, Axios         |
-| Backend     | Node.js, Express.js, MongoDB Atlas     |
+| Frontend    | React 18, Material-UI 5, Axios        |
+| Backend     | Node.js, Express.js, MongoDB Atlas    |
 | AI Layer    | Google Gemini AI (via custom AI service) |
-| Deployment  | Vercel (frontend), Render (backend)    |
+| Deployment  | Vercel (frontend), Render (backend)   |
 
 ---
 
@@ -62,18 +62,20 @@ A modern, AI-driven ticketing solution built with **React**, **Node.js**, **Mong
 ## ⚙️ Backend Setup
 
 1. **Navigate to the backend directory:**
-cd backend
+   ```bash
+   cd backend
+   ```
 
-text
 2. **Install dependencies:**
-npm install
-
-text
+   ```bash
+   npm install
+   ```
 
 ### Backend Environment Variables
 
 Create a `.env` file in the `backend` directory with the following variables:
 
+```env
 MONGO_URI=mongodb+srv://your-username:your-password@cluster0.mongodb.net/ticket-management?retryWrites=true&w=majority
 JWT_SECRET=your-super-secret-jwt-key-here
 MAILTRAP_SMTP_HOST=sandbox.smtp.mailtrap.io
@@ -85,7 +87,10 @@ APP_URL=http://localhost:3000
 PORT=5000
 NODE_ENV=development
 
-text
+# Inngest Configuration
+INNGEST_SIGNING_KEY=your-inngest-signing-key
+INNGEST_EVENT_KEY=your-inngest-event-key
+```
 
 > **Replace placeholders with your actual credentials and settings.**
 
@@ -94,47 +99,72 @@ text
 ## ⚙️ Frontend Setup
 
 1. **Navigate to the frontend directory:**
-cd ../frontend
+   ```bash
+   cd ../frontend
+   ```
 
-text
 2. **Install dependencies:**
-npm install
-
-text
+   ```bash
+   npm install
+   ```
 
 ### Frontend Environment Variables
 
 Create a `.env` file in the `frontend` directory with the following variables:
 
+```env
 REACT_APP_API_URL=http://localhost:5000
 REACT_APP_ENV=development
-
-text
+```
 
 > **For production, update `REACT_APP_API_URL` to your deployed backend API URL (e.g., your Render service URL).**
 
 ---
 
-## 🎯 Usage
+## 🏃 Running the Application
 
-- **End Users:** Sign up, submit tickets, track progress, and communicate with support.
-- **Support Team:** View assigned tickets, update status, add comments, resolve issues.
-- **Administrators:** Manage users, assign roles, view analytics, and configure settings.
+### Local Development
+
+1. **Start the backend server:**
+   ```bash
+   cd backend
+   npm run dev
+   ```
+
+2. **Start Inngest local development server:**
+   ```bash
+   npx inngest-cli@latest dev
+   ```
+   
+   > **Note:** For production, connect with Inngest Cloud instead of running local dev server.
+
+3. **Start the frontend development server:**
+   ```bash
+   cd frontend
+   npm start
+   ```
+
+### Production
+
+1. **Start the backend:**
+   ```bash
+   cd backend
+   npm start
+   ```
+
+2. **Start the frontend:**
+   ```bash
+   cd frontend
+   npm start
+   ```
 
 ---
 
-## 🧪 Testing
+## 🎯 Usage
 
-- **Backend Tests:**
-cd backend
-npm test
-
-text
-- **Frontend Tests:**
-cd frontend
-npm test
-
-text
+- **End Users:** Sign up, submit tickets, track progress, and communicate with support
+- **Support Team:** View assigned tickets, update status, add comments, resolve issues
+- **Administrators:** Manage users, assign roles, view analytics, and configure settings
 
 ---
 
@@ -156,8 +186,8 @@ text
 
 ## 📝 Tips for Production
 
-- **Update API URLs:** Ensure your frontend points to the correct backend URL in production.
-- **Environment Variables:** Set all required variables in Vercel and Render dashboards.
-- **Rotate Secrets:** Regularly update sensitive keys and credentials.
+- **Update API URLs:** Ensure your frontend points to the correct backend URL in production
+- **Environment Variables:** Set all required variables in Vercel and Render dashboards
+- **Rotate Secrets:** Regularly update sensitive keys and credentials
 
 ---
