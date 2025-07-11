@@ -20,9 +20,14 @@ const PORT = process.env.PORT
 connectDB();
 
 // Middleware
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://agentic-ticket-system.vercel.app'
+];
+
 app.use(cors({
-  origin: ['http://localhost:3000', process.env.FRONTEND_URL], // allow local dev + deployed frontend
-  credentials: true 
+  origin: allowedOrigins,
+  credentials: true
 }));
 
 app.use(express.json());
